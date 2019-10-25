@@ -59,7 +59,8 @@ class App extends React.Component {
         return (
             <div>
                 <Titles />
-                <Form getWeather={this.getWeather}/>
+                {/* <Form getWeather={this.getWeather || this.fetchImages}/> */}
+                <Form getWeather={this.fetchImages}/>
                 <Weather 
                     temperature={this.state.temperature}
                     city={this.state.city}
