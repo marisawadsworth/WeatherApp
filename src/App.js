@@ -3,7 +3,6 @@ import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 
-
 const API_KEY_WEATHER = "0b866fdfdf8c38bc4d61a65c2711b0eb";
 const API_KEY_PHOTOS = "5f282b6b60ee8b4f9e3ba90f878b1c94983f8dc738913d8d7cb8b24f37b0cdc9";
 
@@ -12,11 +11,13 @@ class App extends React.Component {
         temperature: undefined,
         city: undefined,
         country: undefined,
+        icon: undefined,
         humidity: undefined,
         description: undefined,
         error: undefined,
         images: []
     }
+    
     getWeather = async (e) => {
         e.preventDefault();
         const city = e.target.elements.city.value;
@@ -30,6 +31,7 @@ class App extends React.Component {
                 temperature: data.main.temp,
                 city: data.name,
                 country: data.sys.country,
+                icon: data.weather[0].icon,
                 humidity: data.main.humidity,
                 description: data.weather[0].description,
                 error: ""
@@ -39,6 +41,7 @@ class App extends React.Component {
                 temperature: undefined,
                 city: undefined,
                 country: undefined,
+                icon: undefined,
                 humidity: undefined,
                 description: undefined,
                 error: "Please enter the values."
@@ -65,6 +68,7 @@ class App extends React.Component {
                     temperature={this.state.temperature}
                     city={this.state.city}
                     country={this.state.country}
+                    icon={this.state.icon}
                     humidity={this.state.humidity}
                     description={this.state.description}
                     error={this.state.error}
