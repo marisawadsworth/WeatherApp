@@ -56,14 +56,14 @@ class App extends React.Component {
         this.setState({
             images: res.results.map(i => i.urls.full)
         });
+        
     };
 
     render() {
         return (
             <div>
                 <Titles />
-                {/* <Form getWeather={this.getWeather || this.fetchImages}/> */}
-                <Form getWeather={this.fetchImages}/>
+                <Form getWeather={this.getWeather}/>
                 <Weather 
                     temperature={this.state.temperature}
                     city={this.state.city}

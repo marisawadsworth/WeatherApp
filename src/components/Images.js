@@ -6,4 +6,5 @@ const unsplash = new Unsplash({
   secret: "8fbaba616470b61c3b8ee3a3aa4902fadd487f9e04b715cb494476ca1cab7503"
 });
 
+
   export default Images;
