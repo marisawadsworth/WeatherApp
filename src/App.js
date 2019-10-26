@@ -51,7 +51,7 @@ class App extends React.Component {
 
     fetchImages = async () => {
         let value = (`${this.state.city}, ${this.state.country}`);
-        let res = await fetch(`https://api.unsplash.com/search/photos/?per_page=4&query=${value}&client_id=${API_KEY_PHOTOS}`);
+        let res = await fetch(`https://api.unsplash.com/search/photos/?per_page=1&query=${value}&client_id=${API_KEY_PHOTOS}`);
         res = await res.json();
         this.setState({
             images: res.results.map(i => i.urls.full)
@@ -61,21 +61,23 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <Titles />
-                <Form getWeather={this.getWeather}/>
-                <Weather 
-                    temperature={this.state.temperature}
-                    city={this.state.city}
-                    country={this.state.country}
-                    icon={this.state.icon}
-                    humidity={this.state.humidity}
-                    description={this.state.description}
-                    error={this.state.error}
-                />
-                <h1>Photos of the Location</h1>
-                <button onClick={this.fetchImages}>Images</button>
-                {this.state.images.map((url, idx) => <img width="200" key={idx} src={url} alt="searched item"/>)}
+            <div className="wrapper">
+                <div className="weather-container">
+                    <Titles />
+                    <Form getWeather={this.getWeather}/>
+                    <Weather 
+                        temperature={this.state.temperature}
+                        city={this.state.city}
+                        country={this.state.country}
+                        icon={this.state.icon}
+                        humidity={this.state.humidity}
+                        description={this.state.description}
+                        error={this.state.error}
+                    />
+                    {/* <h1>Photos of the Location</h1> */}
+                    <button onClick={this.fetchImages}>Images</button>
+                 </div>
+                    {this.state.images.map((url, idx) => <img className="image" key={idx} src={url} alt="searched item"/>)}
             </div>
         );
     }
