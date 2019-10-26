@@ -62,6 +62,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="wrapper">
+            <div className="image">
                 <div className="weather-container">
                     <Titles />
                     <Form getWeather={this.getWeather}/>
@@ -77,7 +78,9 @@ class App extends React.Component {
                     {/* <h1>Photos of the Location</h1> */}
                     <button onClick={this.fetchImages}>Images</button>
                  </div>
-                    {this.state.images.map((url, idx) => <img className="image" key={idx} src={url} alt="searched item"/>)}
+                 {/* <div className="image"> */}
+                    {this.state.images.map((url, idx) => <img className="background-image" key={idx} src={url} alt="searched item"/>)}
+                </div>
             </div>
         );
     }

@@ -11,7 +11,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 .h1 {
@@ -27,7 +28,7 @@ body {
     font-size: 25px;
     text-align: center;
     background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.75);
     color: white;
     padding: 20px;
     padding-bottom: 30px;
@@ -59,23 +60,29 @@ input::placeholder {
 }
 
 /* Weather Text/Icon */
-.weather__key {
-    /* padding: 20px 0 20px 0; */
+.weather-key {
     font-size: 24px;
-  }
+    margin: 15px;
+}
+
+.weather-key-degress {
+    margin: 0;
+    font-size: 36px;
+}
 
 .weather-icon {
     width: 100px;
     height: 100px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+    margin: 0px;
 }
 
 /* Background - unsplash */
-.image {
+.background-image {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
